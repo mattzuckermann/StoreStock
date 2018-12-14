@@ -1,4 +1,3 @@
-const nodeInput = process.argv[2];
 const inquirer = require("inquirer");
 const mysql = require("mysql");
 
@@ -15,11 +14,13 @@ connection.connect(function (err) {
     else console.log(`Your connection to port #${connection.config.port} was successful!`);
 });
 
-// if (nodeInput === "runPrompt") {
-//     runPrompt();
-// } else {
-//     console.log("You must enter an action to proceed");
-// }
+connection.query(
+    "SELECT * FROM products WHERE id = 4",
+    function (err, res) {
+        if (err) throw err;
+        console.log(res[0].product_name);
+    }
+);
 
 function runPrompt() {
     inquirer
