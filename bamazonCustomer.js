@@ -12,14 +12,14 @@ const connection = mysql.createConnection({
 
 connection.connect(function (err) {
     if (err) throw err;
-    else console.log(`Your connection to port #${connection.port} was successful!`)
+    else console.log(`Your connection to port #${connection.config.port} was successful!`);
 });
 
-if (nodeInput === "runPrompt") {
-    runPrompt();
-} else {
-    console.log("You must enter an action to proceed");
-}
+// if (nodeInput === "runPrompt") {
+//     runPrompt();
+// } else {
+//     console.log("You must enter an action to proceed");
+// }
 
 function runPrompt() {
     inquirer
