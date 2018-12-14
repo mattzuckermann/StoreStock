@@ -30,4 +30,6 @@ VALUES
     ("Permanent Markers", "School", 5, 15),
     ("Electric Guitar", "Music", 200, 50);
 
+UPDATE products SET stock_quantity = 3 WHERE id = 4;
+
 SELECT * FROM products;
