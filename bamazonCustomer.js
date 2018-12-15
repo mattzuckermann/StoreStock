@@ -33,6 +33,7 @@ function runPrompt() {
         ]).then(function (answer) {
             let productChoiceName = answer.productChoiceName;
             if (answer.productChoiceName === "* - I DON'T WANT TO PURCHASE ANYTHING") {
+                console.log("");
                 process.exit();
             } else {
                 inquirer
@@ -73,7 +74,7 @@ Processing purchase order for ${answer.productChoiceQuantity} ${queryItemName}s
 ------------------------------
 You have ordered ${quantityDifference} too many.
 We have ${queryItemQuantity} left in stock.
-Be sure to order less than the total stock.
+Be sure to order less than the total left in stock.
 `);
                                         inquirer
                                             .prompt([
@@ -95,27 +96,41 @@ Be sure to order less than the total stock.
                                         const newQuantity = queryItemQuantity - answer.productChoiceQuantity;
                                         const totalOrderCost = queryItemCost * answer.productChoiceQuantity;
                                         if (newQuantity === 1) {
-                                            console.log(`${queryItemName} stock leftover proceeding purchase: ${newQuantity} unit\n`);
+                                            console.log(`\n${queryItemName} stock leftover proceeding your purchase: ${newQuantity} unit`);
                                         } else {
-                                            console.log(`${queryItemName} stock leftover proceeding purchase: ${newQuantity} units\n`);
+                                            console.log(`\n${queryItemName} stock leftover proceeding your purchase: ${newQuantity} units`);
                                         }
                                         connection.query(
                                             `UPDATE products SET stock_quantity = ${newQuantity} WHERE id = ${idOfProductChoice}`,
                                             function (err, res) {
                                                 if (err) {
                                                     throw err;
-                                                } else if (answer.productChoiceQuantity === 1) {
-                                                    console.log("You have successfully purchased your item!");
-                                                    console.log(`Your total cost for this order was $${totalOrderCost}`);
-                                                } else if (answer.productChoiceQuantity > 1) {
-                                                    console.log("You have successfully purchased your items!");
-                                                    console.log(`Your total cost for this order was $${totalOrderCost}`);
+                                                } else if (answer.productChoiceQuantity === "1") {
+                                                    console.log(`\nYou have successfully purchased your item!`);
+                                                    console.log(`\nThe total cost of your order was $${totalOrderCost}.\n`);
+                                                } else {
+                                                    console.log(`\nYou have successfully purchased your items!`);
+                                                    console.log(`\nThe total cost of your order was $${totalOrderCost}.\n`);
                                                 }
+                                                inquirer
+                                                    .prompt([
+                                                        {
+                                                            type: "confirm",
+                                                            message: "Would you like to make another purchase?",
+                                                            name: "choicePurchase"
+                                                        }
+                                                    ])
+                                                    .then(function (answer) {
+                                                        if (answer.choicePurchase === true) {
+                                                            runPrompt();
+                                                        } else {
+                                                            console.log("");
+                                                            process.exit();
+                                                        }
+                                                    })
                                             });
-                                        runPrompt();
                                     }
                                 });
-                            // let queryItemQuantity = queryOne();
                         } catch (err) {
                             console.log(err);
                         }

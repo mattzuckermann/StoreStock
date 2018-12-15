@@ -22,12 +22,12 @@ VALUES
     ("Car", "Transportation", 20000, 3),
     ("Vase", "Domestic", 70, 7),
     ("Wrench", "Hardware", 10, 5),
-    ("Motorcylce", "Transportation", 13000, 4),
+    ("Motorcycle", "Transportation", 13000, 4),
     ("Chair", "Domestic", 35, 8),
     ("Screwdriver", "Hardware", 6, 10),
     ("Math Textbook", "School", 50, 9),
     ("Spiral Bound Notebook", "School", 10, 12),
-    ("Permanent Markers", "School", 5, 15),
+    ("Permanent Marker", "School", 5, 15),
     ("Electric Guitar", "Music", 200, 50);
 
 UPDATE products SET stock_quantity = 3 WHERE id = 4;
