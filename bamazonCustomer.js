@@ -26,7 +26,7 @@ function runPrompt() {
         .prompt([
             {
                 type: "list",
-                message: "What product ID would you like to purchase?",
+                message: "What Bamazon product would you like to purchase?",
                 choices: ["* - I DON'T WANT TO PURCHASE ANYTHING", "1 - Car", "2 - Vase", "3 - Wrench", "4 - Motorcycle", "5 - Chair", "6 - Screwdriver", "7 - Math Textbook", "8 - Spiral Bound Notebook", "9 - Permanent Markers", "10 - Electric Guitar"],
                 name: "productChoiceName"
             }
@@ -55,24 +55,25 @@ function runPrompt() {
                                     const queryItemName = res[0].product_name;
                                     let queryItemQuantity = res[0].stock_quantity;
                                     const queryItemCost = res[0].price;
-                                    if (answer.productChoiceQuantity === 1) {
-                                        console.log(`\nProcessing purchase order for ${answer.productChoiceQuantity} ${queryItemName}`);
+                                    if (answer.productChoiceQuantity === "1") {
+                                        console.log(`
+======================================================
+Processing purchase order for ${answer.productChoiceQuantity} ${queryItemName}
+======================================================`);
                                     } else {
-                                        console.log(`\nProcessing purchase order for ${answer.productChoiceQuantity} ${queryItemName}s`);
+                                        console.log(`
+======================================================
+Processing purchase order for ${answer.productChoiceQuantity} ${queryItemName}s
+======================================================`);
                                     }
-
-                                    // return queryItemQuantity;
-                                    // return [queryItemQuantity, queryItemCost, queryItemName]
                                     if (answer.productChoiceQuantity > queryItemQuantity) {
                                         const quantityDifference = (answer.productChoiceQuantity - queryItemQuantity);
                                         console.log(`
-===========================================
-Insufficient Quantity!
-
+    Insufficient Quantity!
+------------------------------
 You have ordered ${quantityDifference} too many.
 We have ${queryItemQuantity} left in stock.
 Be sure to order less than the total stock.
-===========================================
 `);
                                         inquirer
                                             .prompt([
@@ -92,8 +93,12 @@ Be sure to order less than the total stock.
                                             })
                                     } else {
                                         const newQuantity = queryItemQuantity - answer.productChoiceQuantity;
-                                        const totalOrderCost = queryItemCost * queryItemQuantity;
-                                        console.log(`\nChecking/testing new quantity value: ${newQuantity}`);
+                                        const totalOrderCost = queryItemCost * answer.productChoiceQuantity;
+                                        if (newQuantity === 1) {
+                                            console.log(`${queryItemName} stock leftover proceeding purchase: ${newQuantity} unit\n`);
+                                        } else {
+                                            console.log(`${queryItemName} stock leftover proceeding purchase: ${newQuantity} units\n`);
+                                        }
                                         connection.query(
                                             `UPDATE products SET stock_quantity = ${newQuantity} WHERE id = ${idOfProductChoice}`,
                                             function (err, res) {
