@@ -16,22 +16,11 @@ Click [here](https://www.youtube.com/watch?v=uQq6YGy_8hs) for a video walk-throu
 ---
 
 ### Text Walk Through:
-1. Bamazon Customer node app apiring with mysql. database set up with variety of items (quantity, cost, etc). required the mysql node
-2. adkfjhadslkfhjas
-    - package and used inquirer to prompt user withquestions. I run server.js to connect to mysql and you get an "attempting to connect" 
-    - message and your connection will be successful. it will ask if"What Bamazong product would you like to purchase?
-      1. gkjhgkhg hgkjhgk 
-How many units of this product would you like to buy
+The Store Stock Item Grabber node.js app pairs with a MySQL database that is set up with variety of items showing product name, cost, and the number of items left in stock (See sample table from video explanation below).
 
-"Processing purchase order for **"
+The MySQL and Inquirer npm packages are utilized to make a connection with the database and use Inquirer's prompt tool to ask the user question regarding which item and how many of that item they'd like to receive. If there are not enough of that particular item, the node.js function will notify the user that there isn't enough of that to fulfill their request and only X amount of such item are left.
 
-Car stock leftover proceeding your purchase: ____ "unit(s)"
-
-"You have successfully purchased your items!"
-"The total cost of your order was ______"
-
-"Would you like to make another purchase?"
-
+Whether you asked for too many or successfully made a purchase, the app will continue to prompt you with the question: "Would you like to make another purchase?" Not only can the user exit the app under this prompt by answering "No," but upon receiving the prompt regarding which item one would like to purchase, the user can select "I DON'T TO PURCHASE ANYTHING."
 
 ---
 
