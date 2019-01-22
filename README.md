@@ -1,4 +1,4 @@
-# Store-Stock-Item-Grabber_MySQL-Node
+# **Store-Stock-Item-Grabber_MySQL-Node**
 
 
 ## Purpose Of App:
@@ -11,16 +11,27 @@ Click [here](https://www.youtube.com/watch?v=uQq6YGy_8hs) for a video walk-throu
 
 ---
 
-### Text Walk Through
+### Text Walk Through:
 1. Bamazon Customer node app apiring with mysql. database set up with variety of items (quantity, cost, etc). required the mysql node
 2. adkfjhadslkfhjas
     - package and used inquirer to prompt user withquestions. I run server.js to connect to mysql and you get an "attempting to connect" 
     - message and your connection will be successful. it will ask if"What Bamazong product would you like to purchase?
       1. gkjhgkhg hgkjhgk 
+How many units of this product would you like to buy
+
+"Processing purchase order for **"
+
+Car stock leftover proceeding your purchase: ____ "unit(s)"
+
+"You have successfully purchased your items!"
+"The total cost of your order was ______"
+
+"Would you like to make another purchase?"
+
 
 ---
 
-#### Data Table Reference:
+### Data Table Reference:
 
 Product | Department | Price | Inventory
 :---: | :---: | :---: | :---:
@@ -36,14 +47,3 @@ Permanent Marker | School | $5 | 15
 Electric Guitar | School | $200 | 50
 
 ---
-
-How many units of this product would you like to buy
-
-"Processing purchase order for **"
-
-Car stock leftover proceeding your purchase: ____ "unit(s)"
-
-"You have successfully purchased your items!"
-"The total cost of your order was ______"
-
-"Would you like to make another purchase?"
