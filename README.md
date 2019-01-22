@@ -5,7 +5,7 @@
 
 
 
-## Purpose Of App:
+## Purpose of App:
 This app provides an assortment of items from a MySQL database in which customers can purchase through the node.js package "Inquirer." Depending on what item is chosen and how many units of that item are purchased, the app will present the total cost accordingly as well as give the customer the total inventory leftover for that item proceeding the purchase.
 
 ---
