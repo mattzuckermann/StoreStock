@@ -7,9 +7,9 @@ This app provides an assortment of items from a MySQL database in which customer
 ***
 
 ### YouTube Link: Walk-Through of Node App
-The YouTube link below is a walk-through of my Store-Stock-Item-Grabber app in Node.js:
-https://www.youtube.com/watch?v=uQq6YGy_8hs
+Click [here](https://www.youtube.com/watch?v=uQq6YGy_8hs) for a video walk-through of my Store-Stock-Item-Grabber app in Node.js:
 
+---
 
 #### Short Text Explaination of 
 1. Bamazon Customer node app apiring with mysql. database set up with variety of items (quantity, cost, etc). required the mysql node
@@ -17,6 +17,8 @@ https://www.youtube.com/watch?v=uQq6YGy_8hs
     - package and used inquirer to prompt user withquestions. I run server.js to connect to mysql and you get an "attempting to connect" 
     - message and your connection will be successful. it will ask if"What Bamazong product would you like to purchase?
       1. gkjhgkhg hgkjhgk 
+
+___
 
 How many units of this product would you like to buy
 
