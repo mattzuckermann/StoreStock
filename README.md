@@ -23,17 +23,17 @@ Click [here](https://www.youtube.com/watch?v=uQq6YGy_8hs) for a video walk-throu
 #### Data Table Reference:
 
 Product | Department | Price | Inventory
---- | ---: | :---: | :---:
-Car | Transportation | 20,000 | 3
-Vase | Domestic | 70 | 7
-Wrench | Hardware | 10 | 5
-Motorcycle | Transportation | 13,000 | 3
-Chair | Domestic | 35 | 8
-Screwdriver | Hardware | 6 | 10
-Math Textbook | School | 50 | 9
-Spiral Bound Notebook | School | 10 | 12
-Permanent Marker | School | 5 | 15
-Electric Guitar | School | 200 | 50
+:---: | :---: | :---: | :---:
+Car | Transportation | $20,000 | 3
+Vase | Domestic | $70 | 7
+Wrench | Hardware | $10 | 5
+Motorcycle | Transportation | $13,000 | 3
+Chair | Domestic | $35 | 8
+Screwdriver | Hardware | $6 | 10
+Math Textbook | School | $50 | 9
+Spiral Bound Notebook | School | $10 | 12
+Permanent Marker | School | $5 | 15
+Electric Guitar | School | $200 | 50
 
 ---
 
