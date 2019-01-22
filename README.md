@@ -16,11 +16,15 @@ Click [here](https://www.youtube.com/watch?v=uQq6YGy_8hs) for a video walk-throu
 ---
 
 ### Text Walk Through:
-The Store Stock Item Grabber node.js app pairs with a MySQL database that is set up with variety of items showing product name, cost, and the number of items left in stock (See sample table from video explanation below).
+The Store Stock Item Grabber node.js app pairs with a MySQL database, named "bamazon", which is set up with variety of items showing product name, cost, and the number of items left in stock (See the "Data Table Reference" below).
 
-The MySQL and Inquirer npm packages are utilized to make a connection with the database and use Inquirer's prompt tool to ask the user question regarding which item and how many of that item they'd like to receive. If there are not enough of that particular item, the node.js function will notify the user that there isn't enough of that to fulfill their request and only X amount of such item are left.
+The MySQL and Inquirer npm packages are utilized in this app to make a connection with the "bamazon" database and uses Inquirer's prompt tool to ask the user questions regarding which item (as well as how many of that item) they'd like to receive. If there are not enough of the particular item being requested, the app will notify the user that 
+    1. There aren't enough of that item to fulfill their request and
+    2. That only X amount of such item are leftover.
 
-Whether you asked for too many or successfully made a purchase, the app will continue to prompt you with the question: "Would you like to make another purchase?" Not only can the user exit the app under this prompt by answering "No," but upon receiving the prompt regarding which item one would like to purchase, the user can select "I DON'T TO PURCHASE ANYTHING."
+Whether you asked for too many of a particular item and were denied, or you successfully made a purchase from the app, the Inquirer prompt tool will either follow up with "Would you like to make another purchase?" (if successful), or "Would you still like to make a purchase?" (if unsuccessful).
+
+Not only can the user exit the app under this prompt by answering "No," but upon receiving the prompt regarding which item one would like to purchase, the user can also select "I DON'T TO PURCHASE ANYTHING" in order to exit the app.
 
 ---
 
