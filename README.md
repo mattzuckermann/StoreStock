@@ -1,7 +1,7 @@
 # Store-Stock-Item-Grabber_MySQL-Node
 
-Purpose of app:
-Alt-H1
+## Purpose of app:
+Alt-
 
 The YouTube link below is a walk-through of my Store-Stock-Item-Grabber app in Node.js:
 https://www.youtube.com/watch?v=uQq6YGy_8hs
