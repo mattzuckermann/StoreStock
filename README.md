@@ -11,7 +11,7 @@ This app provides an assortment of items from a MySQL database in which customer
 ---
 
 ### Video Walk Through:
-Click [here](https://www.youtube.com/watch?v=uQq6YGy_8hs) for a video walk-through of my Store-Stock-Item-Grabber app in Node.js:
+Click [here](https://www.youtube.com/watch?v=Vufq5RRxQYA&t) for a video walk-through of my Store-Stock-Item-Grabber app in Node.js:
 
 ---
 
